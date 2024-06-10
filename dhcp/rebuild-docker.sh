@@ -1,4 +1,4 @@
 docker stop dhcp-server
 docker rm dhcp-server
-docker rmi oberon-dhcp
-docker build -t oberon-dhcp .
+docker rmi dhcp-server
+docker build -t dhcp-server .

@@ -1,2 +1,3 @@
 docker stop dhcp-server
-docker run -d --network avalon_ipv6 --cap-add=NET_ADMIN --cap-add=NET_RAW --name dhcp-server --privileged oberon-dhcp
+docker run -d --name dhcp-server --cap-add=NET_ADMIN --network bridge -p 192.168.1.70:67:67 -p 192.168.1.70:68:68 -e "INTERFACE=en0" dhcp-server
+# docker run -d --name dhcp-server --cap-add=NET_ADMIN --net=host dhcp-server

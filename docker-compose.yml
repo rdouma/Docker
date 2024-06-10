@@ -1,0 +1,10 @@
+services:
+  dhcp-server:
+    container_name: dhcp-server
+    build: ./dhcp
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./dhcp/dhcpd.conf:/etc/dhcp/dhcpd.conf
+      - ./dhcp-leases:/var/lib/dhcp
+    entrypoint: /usr/local/bin/start-dhcp.sh
